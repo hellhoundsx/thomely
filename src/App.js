@@ -25,7 +25,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="tm">
         <ReduxToastr
           timeOut={4000}
           newestOnTop

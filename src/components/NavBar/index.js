@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { Segment, Icon, Label, Menu } from 'semantic-ui-react';
 import { openMenu } from './actions';
 import { getCart } from '../../views/Cart/reducer';
-import './NavBar.css';
+import './NavBar.scss';
 
 class NavBar extends Component {
   constructor(props) {
@@ -27,13 +27,19 @@ class NavBar extends Component {
 
   render() {
     return (
-      <Segment basic color="purple" inverted size="small" className="nav-bar">
+      <Segment basic size="small" className="nav-bar main">
         <Menu fluid secondary>
-          <Menu.Item onClick={this.showSidebar}>
-            <Icon name="content" size="large" onClick={this.showSidebar} className="shop-icon" />
-          </Menu.Item>
           <Menu.Item className="shop-logo">
             <Link to="/"><img alt="logo" src="./logo.svg" /></Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link to="/">About us</Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link to="/">Blog</Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link to="/">Contact us</Link>
           </Menu.Item>
           <Menu.Item position="right">
             <Menu.Item fitted>
@@ -56,6 +62,7 @@ class NavBar extends Component {
           </Menu.Item>
         </Menu>
       </Segment>
+
     );
   }
 }
