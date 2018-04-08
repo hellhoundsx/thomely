@@ -4,7 +4,6 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Segment, Icon, Label, Menu } from 'semantic-ui-react';
-import config from '../../config/config';
 import { openMenu } from './actions';
 import { getCart } from '../../views/Cart/reducer';
 import './NavBar.css';
@@ -30,13 +29,13 @@ class NavBar extends Component {
     return (
       <Segment basic color="purple" inverted size="small" className="nav-bar">
         <Menu fluid secondary>
-          <Menu.Item onClick={this.showSidebar} fitted>
+          <Menu.Item onClick={this.showSidebar}>
             <Icon name="content" size="large" onClick={this.showSidebar} className="shop-icon" />
           </Menu.Item>
-          <Menu.Item className="shop-name" fitted>
-            <Link to="/">{config.SHOP_NAME}</Link>
+          <Menu.Item className="shop-logo">
+            <Link to="/"><img alt="logo" src="./logo.svg" /></Link>
           </Menu.Item>
-          <Menu.Item position="right" fitted>
+          <Menu.Item position="right">
             <Menu.Item fitted>
               <Icon.Group>
                 <Link to="/cart" className="cart-link">
