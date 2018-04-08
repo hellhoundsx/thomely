@@ -10,7 +10,11 @@ class Checkout extends Component {
     const items = this.props.cart;
 
     return JSON.stringify(
-      items.map(item => ({ id: item.id, quantity: item.quantity, variationId: _.isNil(item.variationId) ? '' : item.variationId })),
+      items.map(item => ({
+        id: item.id,
+        quantity: item.quantity,
+        variationId: _.isNil(item.variationId) ? '' : item.variationId,
+      })),
     );
   }
 

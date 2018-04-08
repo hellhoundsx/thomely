@@ -8,7 +8,7 @@ import { closeMenu } from './components/NavBar/actions';
 import NavBar from './components/NavBar';
 import SideMenu from './views/SideMenu';
 
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +26,14 @@ class App extends Component {
   render() {
     return (
       <div>
-        <ReduxToastr timeOut={4000} newestOnTop preventDuplicates position="top-center" transitionIn="fadeIn" transitionOut="fadeOut" />
+        <ReduxToastr
+          timeOut={4000}
+          newestOnTop
+          preventDuplicates
+          position="top-center"
+          transitionIn="fadeIn"
+          transitionOut="fadeOut"
+        />
         <Sidebar.Pushable>
           <SideMenu isVisible={this.props.sideMenuVisible} closeMenu={this.props.closeMenu} />
           <Sidebar.Pusher dimmed={this.props.sideMenuVisible} onClick={this.hideSidebar}>

@@ -105,7 +105,7 @@ class CartProduct extends Component {
               <Grid.Column width={3} textAlign="right">
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: config.CURRENCY + this.props.product.price * this.state.quantity,
+                    __html: config.CURRENCY + (this.props.product.price * this.state.quantity),
                   }}
                 />
               </Grid.Column>

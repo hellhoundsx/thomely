@@ -24,7 +24,8 @@ class Variations extends Component {
   }
 
   getVariationsByProduct() {
-    return this.props.variations.filter(variation => !_.isNil(_.find(this.props.variationIds, element => element === variation.id)));
+    return this.props.variations.filter(variation =>
+      !_.isNil(_.find(this.props.variationIds, element => element === variation.id)));
   }
 
   getVariationIdBySelections() {
@@ -39,14 +40,20 @@ class Variations extends Component {
       }
     });
 
-    // create an array that will contain the filtered values and initialize it by filtering based on the first option
+    // create an array that will contain the filtered values and initialize it by filtering
+    // based on the first option
     const selections = Object.values(this.state.selections);
-    let filteredAttributes = _.filter(attributesArray, attributeArray => !_.isNil(_.find(attributeArray, ['option', selections[0]])));
+    let filteredAttributes = _.filter(attributesArray, attributeArray =>
+      !_.isNil(_.find(attributeArray, ['option', selections[0]])),
+    );
 
-    // filter the array for each of the selections untill we arrive at an element that has all the selection values
+    // filter the array for each of the selections untill we arrive at an element that has
+    // all the selection values
     _.forEach(this.state.selections, (selection, index) => {
       if (index !== 0) {
-        filteredAttributes = filteredAttributes.filter(filteredAttribute => !_.isNil(_.find(filteredAttribute, ['option', selection])));
+        filteredAttributes = filteredAttributes.filter(filteredAttribute =>
+          !_.isNil(_.find(filteredAttribute, ['option', selection])),
+        );
       }
     });
 

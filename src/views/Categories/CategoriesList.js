@@ -9,7 +9,12 @@ const CategoriesList = (props) => {
     return <div> No categories to display </div>;
   }
   const list = props.categories.map(element => (
-    <CategoryCard key={element.id} id={element.id} src={_.isEmpty(element.image) ? '' : element.image.src} name={element.name} />
+    <CategoryCard
+      key={element.id}
+      id={element.id}
+      src={_.isEmpty(element.image) ? '' : element.image.src}
+      name={element.name}
+    />
   ));
   return <div>{list}</div>;
 };

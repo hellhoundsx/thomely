@@ -42,10 +42,13 @@ class VariationsDropdown extends Component {
     return values;
   }
 
-  // function that triggers when an option value is selected and  changes the available values for the rest of the options
+  // function that triggers when an option value is selected and  changes the available
+  // values for the rest of the options
   remakeValues(data) {
     // get all the attribute combinations that have the selected value
-    const filteredAttributes = _.filter(this.state.attributes, attribute => !_.isNil(_.find(attribute, ['option', data.value])));
+    const filteredAttributes = _.filter(this.state.attributes, attribute =>
+      !_.isNil(_.find(attribute, ['option', data.value])),
+    );
 
     const options = this.state.options;
 
@@ -73,7 +76,14 @@ class VariationsDropdown extends Component {
 
     const dropdowns = options.map((name, index) => (
       <Card.Content key={name}>
-        <Dropdown placeholder={name} fluid selection options={dropdownValues[index]} onChange={(event, data) => this.remakeValues(data)} />{' '}
+        <Dropdown
+          placeholder={name}
+          fluid
+          selection
+          options={dropdownValues[index]}
+          onChange={(event, data) => this.remakeValues(data)}
+        />
+        {' '}
       </Card.Content>
     ));
 

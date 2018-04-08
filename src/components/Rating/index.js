@@ -9,12 +9,12 @@ class Rating extends Component {
 
     stars.fill(1, 0, this.props.rating);
 
-    return stars.map((element, index) => {
+    return stars.map((element) => {
       if (element === 1) {
-        return <Icon key={index} name="star" color="yellow" />;
+        return <Icon name="star" color="yellow" />;
       }
 
-      return <Icon key={index} name="empty star" color="yellow" />;
+      return <Icon name="empty star" color="yellow" />;
     });
   }
 
